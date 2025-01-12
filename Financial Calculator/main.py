@@ -15,12 +15,15 @@ def goal():
         WoM = "week"
     elif weekorMonth == "M":
         WoM = "month"
-
     
+    if WoM == "week":
+        WoM2 = "weeks"
+    elif WoM == "month":
+        WoM2 = "months"
 
-    howMuch = int(input("How much money would you like to deposit every week/month? :"))
+    howMuch = int(input("How much money would you like to deposit every week/month?"))
     howLong = totalGoal/howMuch
-    print("It will take", howLong, "weeks to reach your goal! \n \n \n")
+    print("It will take", howLong, WoM2, "to reach your goal! \n \n \n")
     main()
 
 
