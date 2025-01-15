@@ -8,11 +8,16 @@ def goal():
         WoM = "week"
     elif weekorMonth == "M":
         WoM = "month"
+    
+    if WoM == "week":
+        WoM2 = "weeks"
+    elif WoM == "month":
+        WoM2 = "months"
 
-    howMuch = float(input("How much money would you like to deposit every week/month? :"))
+    howMuch = int(input("How much money would you like to deposit every week/month?"))
     howLong = totalGoal/howMuch
-    print(f"It will take {howLong:.2f} weeks to reach your goal! \n \n \n")
-    runAgain()
+    print("It will take", howLong, "weeks to reach your goal! \n \n \n")
+    main()
 
 #Calculates compound interest
 def compIntCalc():
