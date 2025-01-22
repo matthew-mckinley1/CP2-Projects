@@ -1,47 +1,50 @@
 #Matthew McKinley Personal Library Program
-
+#have the lists of books and titles for the list so i can update them with new stuff
 books = []
 titles = []
 
-def addBook(books, titles):
-    title = str(input("What is the title of the book you want to add?"))
-    author = str(input("What is the author of that book?"))
+#add the book function
+def add_book(books, titles):
+    title = str(input("What is the title of the book you want to add?\n"))
+    author = str(input("What is the author of that book?\n"))
     all = (title, author)
     titles.append(title)
     books.append(all)
 
-def searchFunc(books):
+#search function
+def search_func(books, titles):
     search = str(input("What is the title of the book you want to check?"))
-    if search in books:
-        print("This book is in the list")
+    if search in titles:
+        print("This book is in the list\n\n")
     elif search not in books:
-        print("This book is NOT in the list")
+        print("This book is NOT in the list\n\n")
     else:
-        print("This is not a book")
+        print("This is not a book\n\n")
 
-def removeFunc(books):
+#remove a book function
+def remove_func(books, titles):
     takeOut = str(input("What book would you like to remove?"))
-    if takeOut in books:
-        books.remove(takeOut)
-    elif takeOut not in books:
+    if takeOut in titles:
+        indx = titles.index(takeOut)
+        del books[indx]
+    elif takeOut not in titles:
         return("This is not in the list!")
     
-
+#main function to always run until they exit, having choices of what they want to do
 def main(books, titles):
     while True:
-        choice = int(input("Press 1 to print the list\nPress 2 to add to the list\nPress 3 to search through the list\nPress 4 to remove something from the list\nPress 5 to exit the program\n:"))
+        choice = int(input("\n\nPress 1 to print the list\nPress 2 to add to the list\nPress 3 to search through the list\nPress 4 to remove something from the list\nPress 5 to exit the program\n:"))
         if choice == 1:
             print(books)
-            print(titles)
         elif choice == 2:
-            addBook(books, titles)
+            add_book(books, titles)
         elif choice == 3:
-            searchFunc(books)
+            search_func(books, titles)
         elif choice == 4:
-            removeFunc(books)
+            remove_func(books, titles)
         elif choice == 5:
             exit()
         else:
             print("You didn't put in a usable number!")
-
+#running the main function to start the code
 main(books, titles)
