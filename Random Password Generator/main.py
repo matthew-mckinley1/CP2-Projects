@@ -8,13 +8,10 @@ import random
 
 def reqs():
     length = int(input("How many characters long do you want your password?"))
-    uppercase = int(input("How many uppercase letters do you want in your password?"))
-    lowercase = int(input("How many lowercase letters do you want in your password?"))
-    numbers = int(input("How many numbers do you want in your password?"))
-    special = int(input("How many special characters do you want in your password?"))
-    if uppercase + lowercase + numbers + special == length:
-        main()
-    elif uppercase + lowercase + numbers + special != length:
-        print("There is an error in the adding!")
-        reqs()
-        
+    uppercase = int(input("Do you want uppercase letters in your password? (Y/N)"))
+    lowercase = int(input("Do you want lowercase letters in your password? (Y/N)"))
+    numbers = int(input("Do you want numbers in your password? (Y/N)"))
+    special = int(input("Do you want special characters in your password? (Y/N)"))
+    #for x in length:
+        #while x <= length:
+            
