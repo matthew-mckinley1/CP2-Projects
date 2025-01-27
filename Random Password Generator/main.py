@@ -1,5 +1,4 @@
 #Matthew McKinley Random Password Generator
-
 import random
 import string
 
@@ -40,23 +39,22 @@ def randomNumGenerator(length, num, sym, upper, lower):
 
 #Main UI, allows for multiple generations of passwords
 def main():
-    print('\033cWelcome to the random password generator.')
-    print('This generator will generate 4 passwords for you after asking a few questions.')
+    print('This random password generator will make 4 passwords for you after asking a few questions.')
     while True:
-        length = int(check_dataType('How long would you like your password to be? --->  ', 'float', 10))
-        numbers = check_dataType('Would you like to include numbers? (y/n) --->  ', 'bool')
-        symbols = check_dataType('Would you like to include symbols? (y/n) --->  ', 'bool')
-        upper = check_dataType('Would you like to include uppercase letters? (y/n) --->  ', 'bool')
-        lower = check_dataType('Would you like to include lowercase letters? (y/n) --->  ', 'bool')
+        length = int(check_dataType('How long would you like your password to be? :', 'float', 10))
+        numbers = check_dataType('Would you like to include numbers? (y/n) :', 'bool')
+        symbols = check_dataType('Would you like to include symbols? (y/n) :', 'bool')
+        upper = check_dataType('Would you like to include uppercase letters? (y/n) :', 'bool')
+        lower = check_dataType('Would you like to include lowercase letters? (y/n) :', 'bool')
         if not numbers and not symbols and not upper and not lower:
             lower = True
         print('\033cHere are 4 randomly generated passwords: ')
         for i in range(4):
             #Generated password
             password = randomNumGenerator(length,numbers,symbols,upper,lower)
-            # Prints 4 generated passwords
+            # Prints 4 random passwords
             print(f'{i+1}. {password}')
-        #Allows for user to leave program
+        #Allows user to leave program
         if input('Would you like to generate more passwords? (y/n) --->  ').lower() == 'n':
             break
     
