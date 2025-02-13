@@ -3,7 +3,6 @@
 import csv
 
 def filters():
-    print("tomato")
     filter = int(input("What filter would you like to add to narrow down your search? \nPress 1 for Genre\nPress 2 for Directors\nPress 3 for Movie Length\nPress 4 for Actors\n:"))
     current_filters = []
     if filter == 1:
