@@ -7,8 +7,8 @@
 #Delete item from to do list
 
 def view_items():
-    with open("To Do List\to_do_list.txt", "r") as file:
-        for row in "To Do List\to_do_list.txt": #I don't know if this is how to do this
+    with open("To Do List/to_do_list.txt", "r") as file:
+        for row in "To Do List/to_do_list.txt": #I don't know if this is how to do this
             print(row)
         
         main()
@@ -16,28 +16,29 @@ def view_items():
 
 
 def add_items():
-    with open("To Do List\to_do_list.txt", "a") as file:
+    with open("To Do List/to_do_list.txt", "a") as file:
         add = input("What item would you like to add?")
         #"To Do List\to_do_list.txt".append(add) this is not how it works
         main()
 
 
 def mark_items():
-    with open("To Do List\to_do_list.txt", "w+") as file:
+    with open("To Do List/to_do_list.txt", "w+") as file:
         mark = input("What item would you like to mark as done?")
         #add something to show that they're marked
         main()
 
 
 def delete_items():
-    with open("To Do List\to_do_list.txt", "w") as file:
+    with open("To Do List/to_do_list.txt", "w") as file:
         delete = input("What item would you like to delete?")
         #remove stuff
         main()
 
 
 def main():
-    while True:
+    running = True
+    while running == True:
         choice = input("Welcome to the To Do List!\nPress 1 to View List\nPress 2 to Add Items\nPress 3 to Mark Items\nPress 4 to Delete Items\nPress 5 to Leave\n:")  
         if choice == 1:
             view_items()
@@ -48,7 +49,7 @@ def main():
         elif choice == 4:
             delete_items()
         elif choice == 5:
-            break
+            running = False
 
 
 main()
