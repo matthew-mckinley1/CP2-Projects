@@ -38,7 +38,7 @@ def delete_items():
 
 def main():
     while True:
-        choice = input("Welcome to the To Do List!\nPress 1 to View\nPress 2 to Add Items\nPress 3 to Mark Items\nPress 4 to Delete Items\nPress 5 to Leave\n:")  
+        choice = input("Welcome to the To Do List!\nPress 1 to View List\nPress 2 to Add Items\nPress 3 to Mark Items\nPress 4 to Delete Items\nPress 5 to Leave\n:")  
         if choice == 1:
             view_items()
         elif choice == 2:
@@ -49,5 +49,6 @@ def main():
             delete_items()
         elif choice == 5:
             break
+
 
 main()
