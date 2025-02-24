@@ -11,3 +11,9 @@ def div(num_one, num_two):
 
 def mult(num_one, num_two):
     return (num_one*num_two)
+
+if __name__ == "main":
+    add()
+    sub()
+    div()
+    mult()
