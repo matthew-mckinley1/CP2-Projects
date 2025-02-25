@@ -1,5 +1,7 @@
-my_list = ["a", "b", "c", "d"]
+name = input("What is your name?")
 
-my_list = "".join(my_list)
+def greet(name):
+    print(f"Hello, {name}!")
 
-print(my_list)
+greet(name)
+greet(name)
