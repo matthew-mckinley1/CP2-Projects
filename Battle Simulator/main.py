@@ -1,17 +1,21 @@
 #Matthew McKinley Battle Simulator
+from character_updater import *
+from battle import *
 
 def main():
     while True:
-        match input("Press 1 to create a new character\nPress 2 to see a character's stats\nPress 3 to edit a character\nPress 4 to battle two characters\nPress 5 to exit the game\n:"):
+        match input("Press 1 to create a new character\nPress 2 to see a character's stats\nPress 3 to edit a character\nPress 4 to battle two characters\nPress 5 to exit\n:"):
             case "1":
-                pass #new_char()
+                new_char()
             case "2":
-                pass #char_stats()
+                print_char()
             case "3":
-                pass #char_edit()
+                edit_char
             case "4":
-                pass #battle()
+                battle()
             case "5":
-                pass #break
+                break
             case _:
                 print("That isn't an applicable number!!")
+
+main()
