@@ -6,13 +6,13 @@ def main():
     while True:
         match input("Press 1 to create a new character\nPress 2 to see a character's stats\nPress 3 to edit a character\nPress 4 to battle two characters\nPress 5 to exit\n:"):
             case "1":
-                new_char()
+                create_characters(stats, characters)
             case "2":
-                print_char()
+                check_stats()
             case "3":
-                edit_char
+                edit_characters(stats)
             case "4":
-                battle()
+                choose_chars1(char_1_name, char_1)
             case "5":
                 break
             case _:
