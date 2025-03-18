@@ -102,27 +102,25 @@ def edit_characters(stats):
 #print the stats
 def check_stats():
     with open("Battle Simulator/characters.csv", "r") as file:
-        for row in file: #iterate through the 
+        for row in file: #iterate through the file and print it
             print(row)
-
+#function to save it to the csv
 def save_to_csv(stats, characters):
-    with open("Battle Simulator/characters.csv", "a") as file:
+    with open("Battle Simulator/characters.csv", "a") as file: #opens the file to add to it
         writer = csv.writer(file)
-        writer.writerow(["name", "health", "strength", "defense", "speed", "level"])
         for character in characters:
             writer.writerow([stats['name'], stats['health'], stats['strength'], stats['defense'], stats['speed'], stats['level']])
-
+#levels up the characters
 def level_up():
     def char_1_level_up(stats, characters, char_1):
         for character in characters:
             if character == char_1:
-                stats["level"] = stats["level"] + 1
-                with open("Battle Simulator/characters.csv", "a") as file:
+                stats["level"] = stats["level"] + 1 #adds a level
+                with open("Battle Simulator/characters.csv", "a") as file: #opens the file to add to it
                     writer = csv.writer(file)
-                    writer.writerow(["name", "health", "strength", "defense", "speed", "level"])
-                    for character in characters:
+                    for character in characters: #iterates through the characters and writes the stats into the file
                         writer.writerow([stats['name'], stats['health'], stats['strength'], stats['defense'], stats['speed'], stats['level']])
-
+    #same thing for character two
     def char_2_level_up(stats, characters, char_2):
         for character in characters:
                 if character == char_2:
@@ -131,28 +129,12 @@ def level_up():
                         writer = csv.writer(file)
                         for character in characters:
                             writer.writerow([stats['name'] ,  stats['health'] ,  stats['strength'] ,  stats['defense'] ,  stats['speed'] ,  stats['level']])
+    #runs them
     char_1_level_up()
     char_2_level_up()
-
+#gets the stuff from the csv and prints it
 def get_from_csv():
     with open("Battle Simulator/characters.csv", "r") as file:
         for row in file:
             print(row.strip())
         return
-    
-save_to_csv(stats, characters)
-
-
-"""
-
-character_writer = csv.writer(character_file)
-
-        character_writer.writerow(['name','health','strength','defense','speed','bravery','class','level','wins'])
-
-        for character in characters:
-            
-            character_writer.writerow([character['name'], character['health'], character['strength'], 
-                                       character['defense'], character['speed'], character['bravery'], 
-                                       character['class'], character['level'], character['wins']])
-
-"""
