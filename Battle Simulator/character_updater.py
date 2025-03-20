@@ -77,6 +77,7 @@ def create_characters(stats, characters):
     get_defense(stats)
     get_speed(stats)
 #make it so they can edit the character
+"""
 def edit_characters(stats):
     edit = input("What character would you like to edit?") #ask what character they would like to input
     while True:
@@ -99,6 +100,7 @@ def edit_characters(stats):
                 print("That isn't one of the statistics!")#if it's not in the list of stats
         else:
             print("That isn't a character!")#if its not in the file
+"""
 #print the stats
 def check_stats():
     with open("Battle Simulator/characters.csv", "r") as file:
