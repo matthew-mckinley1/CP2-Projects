@@ -3,6 +3,7 @@ from character_updater import *
 from battle import *
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 from faker import Faker
 
 # Initialize Faker for random character creation
@@ -13,7 +14,7 @@ def main():
     #infinite loop until they break
     while True:
         #take their choice
-        choice = input("Press 1 to create a new character\nPress 2 to see a character's stats\nPress 3 to battle two characters\nPress 4 to view character stats visualization\nPress 5 to see basic stat analysis\nPress 6 to exit\n:")
+        choice = input("Press 1 to create a new character\nPress 2 to see a character's stats\nPress 3 to battle two characters\nPress 4 to view character stats visualization\nPress 5 to see basic stat analysis\nPress 6 to create a random character\nPress 7 to exit\n:")
         
         #if and elifs for their options, run the functions necessary
         if choice == "1":
@@ -26,8 +27,9 @@ def main():
             display_character_visualization()
         elif choice == "5":
             show_stat_analysis()
-        #stop the infinite loop
         elif choice == "6":
+            generate_random_character()
+        elif choice == "7":
             break
         #if it's not one of those 6 numbers, then tell them to try again
         else:
@@ -37,23 +39,29 @@ def main():
 def display_character_visualization():
     char_name = input("Enter the character name for visualization: ")
     char_stats = load_character_stats(char_name)
-    if char_stats:
+    stats_data = pd.DataFrame({
+    'Stat': ['health', 'strength', 'defense', 'speed'],
+    'Value': [char_stats['health'], char_stats['strength'], char_stats['defense'], char_stats['speed']]
+})
+    # Check if character exists
+    if char_stats is None:
+        print("Character not found!")
+        return
+    else:
         labels = ['Health', 'Strength', 'Defense', 'Speed']
         values = [char_stats['health'], char_stats['strength'], char_stats['defense'], char_stats['speed']]
-        
-        # Radar chart plotting
-        fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
-        ax.set_theta_offset(3.14159 / 2)
-        ax.set_theta_direction(-1)
-        ax.set_rlabel_position(0)
-        ax.set_xticks([n * 3.14159 / 2 for n in range(4)])
-        ax.set_xticklabels(labels)
-        ax.plot(values + values[:1], linewidth=2, linestyle='solid')
-        ax.fill(values + values[:1], 'b', alpha=0.2)
-        plt.title(f"Character: {char_name}'s Stats", size=15)
+        plt.style.use('_mpl-gallery-nogrid')
+        # make data
+        x = values
+        colors = plt.get_cmap('Blues')(np.linspace(0.2, 0.7, len(x)))
+        # plot
+        fig, ax = plt.subplots()
+        ax.pie(x, colors=colors, radius=3, center=(4, 4),
+            wedgeprops={"linewidth": 1, "edgecolor": "white"}, frame=True)
+        ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
+            ylim=(0, 8), yticks=np.arange(1, 8))
         plt.show()
-    else:
-        print("Character not found.")
+
 
 # Show basic statistical analysis (Mean, Median, Max, Min)
 def show_stat_analysis():

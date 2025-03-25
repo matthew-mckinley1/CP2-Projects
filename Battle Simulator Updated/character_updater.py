@@ -18,15 +18,35 @@ def check_stat(stat):
 
 # Generate random character details
 def generate_random_character():
-    # Generating random name and backstory using Faker
-    name = fake.name()
-    backstory = fake.text(max_nb_chars=100)
-    health = random.randint(50, 100)
-    strength = random.randint(10, 50)
-    defense = random.randint(5, 30)
-    speed = random.randint(20, 40)
-    return {"name": name, "backstory": backstory, "health": health, "strength": strength, "defense": defense, "speed": speed, "level": 1}
+    # Generate random character data using Faker
+    job = Faker.profile(job)
+    name = Faker.profile(name)
+    residence = Faker.profile(residence)
+    backstory = (name, "works as a", job, "and lives at", residence)
+    health = random.randint(5, 100)
+    strength = random.randint(1, 99)
+    defense = random.randint(1, 99)
+    speed = random.randint(1, 99)
+    level = 1  # Start level at 1
 
+    # Put the stats into a dictionary
+    stats = {
+        "name": name,
+        "health": health,
+        "strength": strength,
+        "defense": defense,
+        "speed": speed,
+        "level": level,
+        "backstory": backstory
+    }
+
+    # Save the generated character to the CSV file
+    save_to_csv(stats)
+
+    # Print the generated character details
+    print(f"Generated character: {name}")
+    print(f"Health: {health}, Strength: {strength}, Defense: {defense}, Speed: {speed}, Level: {level}")
+    
 #make it so that they can create their characters
 def create_characters():
     #stats is a dictionary

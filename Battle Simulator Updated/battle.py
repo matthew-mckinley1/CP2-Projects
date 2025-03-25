@@ -37,12 +37,13 @@ def choose_chars2(char_1_name, char_1_stats):
 
 # Function to load character stats from csv
 def load_character_stats(character_name):
-    #opens the file in read mode
+    # Open the file in read mode
     with open("Battle Simulator Updated/characters.csv", "r") as file:
-        #makes a reader and returns the dictionary
+        # Create a CSV reader
         csv_reader = csv.reader(file)
         for row in csv_reader:
             if row[0] == character_name:
+                # Ensure stats are integers, not strings
                 return {
                     'name': row[0],
                     'health': int(row[1]),
