@@ -15,10 +15,22 @@
 #How do you access the debugger in VS Code?
     #f5, debugging area in the left bar, press the dropdown with the play button
 #What is testing?
-    #
+    #Testing is when you go through your code and try to break it so that you can find problems and fix them.
 #What are boundary conditions?
-
+    #your outliers that are most likely to cause problems, inputs that are strange. Your extreme highs and lows, and something that is most likely to be wrong
+age = 18
+if age >= 18:
+    print("You can vote")
+elif age >= 16:
+    print("You can drive")
+elif age == 15:
+    print("You can get your learner's permit")
+elif age >= 5:
+    print("You can go to school")
+else:
+    print("You are too young to do things")
 #How do you handle when users give strange inputs?
+    #conditionals, try/except
 
 import trace
 import sys
