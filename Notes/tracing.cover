@@ -1,0 +1,30 @@
+       #Matthew McKinley Tracing Notes
+       
+       #What is tracing?
+       # python -m trace --trace C:\Users\matthew.mckinley\Documents\CP2-Projects\Notes\tracing.py
+    1: """
+       --trace (displays function lines as they are executed)
+       --count (displays the number of times each function is executed)
+       """
+       #tracing gives you informations on your functions and where and when they are happening
+       
+       #What are some ways we can debug by tracing?
+       
+       #How do you access the debugger in VS Code?
+       
+       #What is testing?
+       
+       #What are boundary conditions?
+       
+       #How do you handle when users give strange inputs?
+       
+       
+       
+    1: def add(num_one, num_two):
+    1:     return num_one + num_two
+       
+    1: def sub(num_one, num_two):
+    1:     return num_one - num_two
+       
+    1: print(add(538, 463))
+    1: print(sub(538, 463))
