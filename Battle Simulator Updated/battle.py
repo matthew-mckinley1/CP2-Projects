@@ -1,4 +1,4 @@
-#imports csv and random, and also everything from character_updater
+#import csv and random, and also everything from character_updater
 import csv
 import random
 from character_updater import *
