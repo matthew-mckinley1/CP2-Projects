@@ -5,7 +5,7 @@ import random
 from faker import Faker
 
 # Initialize Faker for random character creation
-fake = Faker()
+faker = Faker()
 
 # Validate that stats are within the range of 1-100
 def check_stat(stat):
@@ -19,10 +19,10 @@ def check_stat(stat):
 # Generate random character details
 def generate_random_character():
     # Generate random character data using Faker
-    job = Faker.profile(job)
-    name = Faker.profile(name)
-    residence = Faker.profile(residence)
-    backstory = (name, "works as a", job, "and lives at", residence)
+    job = faker.job()
+    name = faker.name()
+    residence = faker.address()
+    backstory = (name, "works as a", job, "and came from", residence, "to fight!")
     health = random.randint(5, 100)
     strength = random.randint(1, 99)
     defense = random.randint(1, 99)
