@@ -70,13 +70,13 @@ def create_characters():
 #saves it to the csv
 def save_to_csv(stats):
     #opens the csv to append it
-    with open("Battle Simulator Updated/characters.csv", "a", newline='') as file:
+    with open("Battle_Simulator_Updated/characters.csv", "a", newline='') as file:
         #makes a csv writer and writes to the csv
         writer = csv.writer(file)
         writer.writerow([stats["name"], stats["health"], stats["strength"], stats["defense"], stats["speed"], stats["level"]])
 
 #prints all of the characters stats
 def check_stats():
-    with open("Battle Simulator Updated/characters.csv", "r") as file:
+    with open("Battle_Simulator_Updated/characters.csv", "r") as file:
         for row in file:
             print(row.strip())

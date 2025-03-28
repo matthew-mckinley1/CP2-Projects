@@ -38,7 +38,7 @@ def choose_chars2(char_1_name, char_1_stats):
 # Function to load character stats from csv
 def load_character_stats(character_name):
     # Open the file in read mode
-    with open("Battle Simulator Updated/characters.csv", "r") as file:
+    with open("Battle_Simulator_Updated/characters.csv", "r") as file:
         # Create a CSV reader
         csv_reader = csv.reader(file)
         for row in csv_reader:
@@ -128,7 +128,7 @@ def level_up(character_name):
 def update_character_csv(stats):
     characters = []
     #opens the file in read mode
-    with open("Battle Simulator Updated/characters.csv", "r") as file:
+    with open("Battle_Simulator_Updated/characters.csv", "r") as file:
         #makes the reader and saves the current stats
         csv_reader = csv.reader(file)
         #iterates through the list
@@ -137,6 +137,6 @@ def update_character_csv(stats):
                 row = [stats['name'], stats['health'], stats['strength'], stats['defense'], stats['speed'], stats['level']]
                 characters.append(row)
     #opens the file as write and edits the file with the new levels
-    with open("Battle Simulator Updated/characters.csv", "w", newline='') as file:
+    with open("Battle_Simulator_Updated/characters.csv", "w", newline='') as file:
         csv_writer = csv.writer(file)
         csv_writer.writerows(characters)
