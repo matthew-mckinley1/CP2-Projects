@@ -65,7 +65,7 @@ def display_character_visualization():
 
 # Show basic statistical analysis (Mean, Median, Max, Min)
 def show_stat_analysis():
-    df = pd.read_csv("Battle Simulator Updated/characters.csv", header=None, names=["name", "health", "strength", "defense", "speed", "level"])
+    df = pd.read_csv("Battle_Simulator_Updated/characters.csv", header=None, names=["name", "health", "strength", "defense", "speed", "level"])
     print("Statistical Analysis for Character Attributes:\n")
     
     # Calculate basic stats: mean, median, min, max
