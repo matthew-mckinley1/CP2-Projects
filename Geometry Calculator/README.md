@@ -2,57 +2,47 @@
 
 ## Project Description
 ---
-This is a Geometry Calculator and it uses different classes for different shapes, and it compares the area of those shapes to see which one is bigger.  
+This is a Geometry Calculator and it uses different classes for different shapes, and it compares the area of those shapes to see which one is bigger. It also allows you to sort shapes by area or perimeter and view detailed information about each shape using a simple, text-based interface.  
 
 ## Installation
 ---
-1. instruction one
-2. instruction two
-3. instruction three  
+1. Make sure you have Python 3 installed on your system.
+2. Start the `main.py` file, and follow the instructions given to make shapes and compare their areas/perimeters.  
 
 ## Execution and Usage
 ---
-Short paragraph here maybe a bulleted list
-
-+ list item one
-+ list item two
-+ list item three
-
-![image](relative link to your image of the project working NOTE: image must be saved in the repository)  
+This is a terminal-based application. Once you run `main.py`, you'll see a menu-driven system. You can:
++ Create new shapes (Rectangle, Triangle, Circle)
++ Compare the area or perimeter of two shapes
++ Sort all shapes of a type by area or perimeter  
 
 ## Used Technologies
 ---
-+ name of the technology - what it does in the project
-`pip install instructions`
-+ name of the technology - what it does in the project
-`pip install instructions`
-+ name of the technology - what it does in the project
-`pip install instructions`  
++ Python - the main programming language used to build the project  
 
 ## Current Features
 ---
-+ List of cool things your project does
-+ List of cool things your project does
-+ List of cool things your project does  
++ Create and store multiple shapes
++ Compare the area or perimeter of any two shapes
++ Sort shapes based on area or perimeter
++ Detects squares when a rectangle has equal sides
++ Shows detailed information about each shape  
 
 ## Contributing
 ---
-Do not add to this section  
+Do not add to this section
 
 ## Contributors
 ---
-+ List of people who helped and what they did
-+ List of people who helped and what they did
-+ List of people who helped and what they did  
+I  made this by myself!  
 
 ## Author's Info
 ---
-Short paragraph about you (each person in a group project)
-How to contact you if you want that available  
+Matthew McKinley: I started learning how to code in the summer of 2024, starting in Python. The classes that I've taken and the things that I've been taught have helped me know how to code Python pretty well and I've learned a lot of the logic of coding, and I can follow different languages. I think it's a good skill to be able to code, but I don't think I'm going to do this as a profession. You can reach me at my school email: matthew.mckinley@ucas-edu.net  
 
 ## Change Log
 ---
-Do not add to this section  
+Do not add to this section
 
 ## License
 ---
